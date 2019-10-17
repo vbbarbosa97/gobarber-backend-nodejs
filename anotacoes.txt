@@ -1,0 +1,54 @@
+1 - yarn init -y //iniciando projeto
+2 - yarn add express //adicionando o express
+3 - node src/server.js //uma das formas de iniciar o servidor
+4 - yarn add sucrase nodemon -D //adicionando o sucrase e o nodemon como dependecia de dev
+//o sucrase vai permitir utilizar nomeclatura do javascript atual
+
+5 - para usar o sucrase com o  nodemon de forma mais facil, criar o arquivo nodemon.json
+6 - docker run --name database -e POSTGRES_PASSWORD=docker -p 5432:5432 -d postgres
+7 - yarn add sequelize //adicionando o sequelize para padrão mvc
+8 - yarn add sequelize-cli -D //dependecia de desenvolvimento, serve para facilitar na hora dos comandos
+9 - configurar o arquivo '.sequelizerc' 
+10- yarn add pg pg-hstore //adicionando essas dependecias para utilizar o postgres no sequelize 
+
+11 - yarn sequelize migration:create --name=nome_da_migratio //comando para criar uma migration usando o sequelize cli
+12 - yarn sequelize db:migrate //comando para rodar as migrations
+13 - yarn sequelize db:migrate:undo //comando que desfaz a ultima migration rodada
+14 - yarn sequelize db:migrate:undo:all //comando que desfaz todas as migrations rodadas
+//abrir o banco no postbird; snap run postbird
+
+15 - yarn add bcryptjs //adiciona a extensão pra utilizar bcrypt nas senhas
+16 - yarn add jsonwebtoken //adicona a extensão para utilizar o token
+17 - yarn add yup //para fazer a validação de dados como o formato da senha
+
+18 - yarn add multer //trabalha com multiplatformdata 
+//multer configura o arquivo de upload de imagens  
+
+19 - yarn add date-fns@next // biblioteca para trabalhar com datas
+//o @next vai pegar a versão mais atualizada
+
+//Adicionei uma imagem do mongoDB 
+20 - docker run --name mongobarber -p 27017:27017 -d -t mongo
+21 - yarn add mongoose //para trabalhar com o mongo, igual foi feito com o sequelize
+22 - instalei o mongoDB compass 
+
+//usando o mailtrap.io no desenvolvimento
+23 - yarn add nodemailer // biblioteca para enviar email
+24 - escrever uma config para utilizar os email
+//o handlebars é uma biblioteca que permite personalizar o template do email usando variaveis do node
+25 - yarn add express-handlebars // integração com o express
+26 - yarn add nodemailer-express-hadlebars //integrando com nodemailer
+
+//criei um banco redis no docker para utilizar o serviço de envio de email em segundo plano
+27 - docker run --name redisbarber -p 6379:6379 -d -t redis:alpine
+28 - yarn add bee-queue //ferramenta que controla a fila de envios de emails
+29 - rodar a fila de envio dos emails em outro terminal / node queue / comando configurado no package.json
+
+30 - new Date().getTime() //pega a data do console log da pagina web
+
+//FAZENDO TRATAMENTO DE ERROS, UTILIZANDO O SENTRY COMO FERRAMENTA
+seguir os passos do projeto criado para configurar o tratamento de ERROS
+
+31 - yarn add express-async-errors //extensão que vai enviar os erros dentro no async para o express
+32 - yarn add youch // faz um tratativa de erro nas mensagens 
+33 - yarn add dotenv //usado para configurar as variaveis de ambiente
