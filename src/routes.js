@@ -19,6 +19,7 @@ const upload = multer(multerConfig); //instanciando o multer e passando as confi
 
 routes.post('/users', UserController.store); //passando o método que foi criado no controller
 routes.post('/session', SessionController.store); 
+routes.get('/session', SessionController.index);  //rota de teste
 
 //ROTAS ABAIXO SÃO AUTENTICADAS
 routes.use(authMiddleware); //daqui para baixo todas as rotas vao usar ess middleaware

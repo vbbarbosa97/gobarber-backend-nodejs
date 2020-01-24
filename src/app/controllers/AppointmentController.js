@@ -106,7 +106,7 @@ class AppointmentController{
             where:{
                 provider_id, //id do prestador
                 canceled_at: null, //se não esta cancelado
-                date
+                date: hourStart,
             },
         });
 
@@ -143,7 +143,7 @@ class AppointmentController{
         return res.json(appointment);
     }
 
-    //DELETA UM AGENDAMENTO
+    //CANCELA UM AGENDAMENTO
     async delete(req,res){
 
         //pegando o agendamento do banco de dados e os dados do prestador

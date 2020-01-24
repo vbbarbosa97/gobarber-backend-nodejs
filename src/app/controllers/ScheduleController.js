@@ -25,7 +25,7 @@ class ScheduleController {
         const parseDate = parseISO(date);
 
         //trazendo os agendamentos da data que foi passada
-        const appointment = await Appointment.findAll({
+        const appointments = await Appointment.findAll({
             where:{
                 provider_id: req.userId,
                 canceled_at: null,
@@ -33,11 +33,18 @@ class ScheduleController {
                     [Op.between]: [startOfDay(parseDate), endOfDay(parseDate)],
                 },
             },
+            include: [
+                {
+                    model: User,
+                    as: 'user',
+                    attributes: ['name'],
+                }
+            ],
             order: ['date'],
         });
 
-        return res.json(appointment);
+        return res.json(appointments);
     }
 }
 
-export default new ScheduleController;
+export default new ScheduleController();

@@ -1,5 +1,6 @@
 import * as Yup from 'yup'; //importando o yup 
 import User from '../models/User';
+import File from '../models/File';
 
 class UserController {
 
@@ -84,13 +85,23 @@ class UserController {
             return res.status(401).json({ error: 'Senha Atual Incorreta!' });
         }
 
-        const {id, name, provider } = await user.update(req.body); //atualizando no banco
+        await user.update(req.body); //atualizando no banco
+
+        const { id, name, avatar } = await User.findByPk(req.userId, {
+            include: [
+                {
+                    model: File,
+                    as: 'avatar',
+                    attributes: ['id', 'path', 'url'],
+                }
+            ]
+        })
 
         return res.json({ 
             id,
             name,
             email,
-            provider,
+            avatar,
         });
     }
 }

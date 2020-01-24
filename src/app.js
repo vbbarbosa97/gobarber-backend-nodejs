@@ -3,6 +3,7 @@ import 'express-async-errors'; //importando a extensão que le os erros dentro d
 import express from 'express'; //importando o express
 import routes from './routes'; //importando o arquivo routes
 import path from 'path'; //importano o path do node.js
+import cors from 'cors';
 import * as Sentry from '@sentry/node'; //importando o sentry 
 import sentryConfig from './config/sentry'; //importando a config do sentry
 import Youch from 'youch'; //importando o youch
@@ -21,7 +22,7 @@ class App {
     middlewares(){
         //o sentry vai monitorar todas as rotas abaixo
         this.server.use(Sentry.Handlers.requestHandler());
-
+        this.server.use(cors());
         this.server.use(express.json()); //permitindo a leitura no formato json
         //o servidor vai servir um serviço de imagem
         this.server.use(

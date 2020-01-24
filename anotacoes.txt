@@ -21,6 +21,8 @@
 16 - yarn add jsonwebtoken //adicona a extensão para utilizar o token
 17 - yarn add yup //para fazer a validação de dados como o formato da senha
 
+//SEMPRE LEMBRAR DE PASSAR UM NOVO MODEL NO ARQUIVO DE CONEXÃO DO BANCO DE DADOS
+
 18 - yarn add multer //trabalha com multiplatformdata 
 //multer configura o arquivo de upload de imagens  
 
@@ -52,3 +54,5 @@ seguir os passos do projeto criado para configurar o tratamento de ERROS
 31 - yarn add express-async-errors //extensão que vai enviar os erros dentro no async para o express
 32 - yarn add youch // faz um tratativa de erro nas mensagens 
 33 - yarn add dotenv //usado para configurar as variaveis de ambiente
+
+34 - yarn add cors // permite que outras aplicações acessem a API
