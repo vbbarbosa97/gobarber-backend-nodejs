@@ -9,8 +9,8 @@ subHours
 
 import Notification from '../schemas/Notification'; //importando o schema de notificação do mongo
 
-import CancellationMail from '../jobs/CancellationMail'; //importando o cancellationMail
-import Queue from '../../lib/Queue'; //importando  a lib de queue que é uma fila
+//import CancellationMail from '../jobs/CancellationMail'; //importando o cancellationMail
+//import Queue from '../../lib/Queue'; //importando  a lib de queue que é uma fila
 
 //MODELS
 import Appointment from '../models/Appointment'; //importando o model appointment
@@ -188,9 +188,11 @@ class AppointmentController{
 
         //envia o email notificando o prestador do cancelamento
         //chama o método que adiciona um email  na fila
+        /* 
         await Queue.add(CancellationMail.key, {
             appointment, //passando os dados do appointment para o método
         });
+        */
 
         return res.json(appointment);
     }
