@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "nodemon src/server.js",
     "queue": "nodemon src/queue.js",
-    "start": "nodemon src/server.js"
+    "start": "sucrase-node src/server.js"
   },
   "dependencies": {
     "@sentry/node": "5.7.1",
@@ -29,10 +29,11 @@
     "sequelize": "^5.19.0",
     "sequelize-cli": "^5.5.1",
     "youch": "^2.0.10",
-    "yup": "^0.27.0"
+    "yup": "^0.27.0",
+    "sucrase": "^3.10.1"
   },
   "devDependencies": {
-    "nodemon": "^1.19.2",
-    "sucrase": "^3.10.1"
+    "nodemon": "^1.19.2"
+    
   }
 }
